@@ -1,0 +1,40 @@
+{
+    "data" : [
+        "\nR version 3.4.0 (2017-04-21) -- \"You Stupid Darkness\"\nCopyright (C) 2017 The R Foundation for Statistical Computing\nPlatform: x86_64-w64-mingw32/x64 (64-bit)\n\nR is free software and comes with ABSOLUTELY NO WARRANTY.\nYou are welcome to redistribute it under certain conditions.\nType 'license()' or 'licence()' for distribution details.\n\nR is a collaborative project with many contributors.\nType 'contributors()' for more information and\n'citation()' on how to cite R or R packages in publications.\n\nType 'demo()' for some demos, 'help()' for on-line help, or\n'help.start()' for an HTML browser interface to help.\nType 'q()' to quit R.\n\n",
+        "Loading required package: tidyverse\n",
+        "Loading tidyverse: ggplot2\nLoading tidyverse: tibble\nLoading tidyverse: tidyr\nLoading tidyverse: readr\nLoading tidyverse: purrr\nLoading tidyverse: dplyr\n",
+        "Conflicts with tidy packages ---------------------------------------------------\n",
+        "filter(): dplyr, stats\nlag():    dplyr, stats\n",
+        "Loading required package: grid\n",
+        "Loading required package: gridExtra\n",
+        "\nAttaching package: 慻ridExtra?\n",
+        "The following object is masked from 憄ackage:dplyr?\n\n    combine\n\n",
+        "Loading required package: aaasibo\n",
+        "Loading required package: scales\n",
+        "\nAttaching package: 憇cales?\n",
+        "The following object is masked from 憄ackage:purrr?\n\n    discard\n\n",
+        "The following object is masked from 憄ackage:readr?\n\n    col_factor\n\n",
+        "All packages loaded successfully\n",
+        "sibo packages loaded\n",
+        " [1] \"scales\"       \"aaasibo\"      \"gridExtra\"    \"grid\"         \"dplyr\"       \n [6] \"purrr\"        \"readr\"        \"tidyr\"        \"tibble\"       \"ggplot2\"     \n[11] \"tidyverse\"    \"easypackages\" \"stringr\"      \"stats\"        \"graphics\"    \n[16] \"grDevices\"    \"utils\"        \"datasets\"     \"methods\"      \"base\"        \nWorking directory: E:/Code/R_Script/aaasibo \n[Workspace loaded from E:/Code/R_Script/aaasibo/.RData]\n\n\nRestarting R session...\n\n"
+    ],
+    "type" : [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2
+    ]
+}

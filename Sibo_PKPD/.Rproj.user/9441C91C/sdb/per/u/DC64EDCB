@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "x <- \"a=10 ,\nb=3,  \nc=1.86E+04,\nd=a-b,\ne=3+d,\ng=c/100 \"\n\n\naaa  <- con_para(x)",
+    "created" : 1488894913097.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2100707296",
+    "id" : "DC64EDCB",
+    "lastKnownWriteTime" : 7308613580334719340,
+    "last_content_update" : 1488894968232,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,512 @@
+fit_color +   geom_segment(data=dosing,mapping=aes(x=TIME, y=0, xend=TIME, yend=0.04),
+color="orange",arrow = arrow(length = unit(0.1,"cm")))  +
+scale_x_continuous(breaks= pretty_breaks())
+path <- 'M:\\NMrun\\last.csv'
+readLines(path,n=1)
+Osim <- na.omit(as.data.frame(sapply(read_csv(path,skip=2), as.numeric)))
+#Osim <- filter(Osim,ID!=112)
+obs <- Osim %>% filter(EVID==0,CMT==5) %>%  filter(OBS>0) %>%
+select(one_of(c('ID','TIME','OBS','CMT'))) %>% distinct
+dosing  <-  Osim %>%  select(one_of(c('ID','TIME','CMT','EVID')))%>%
+filter(EVID==1)   %>% distinct
+sim  <-  Osim %>% filter(EVID==0,CMT==5)  %>%
+group_by(ID,TIME)  %>% summarise  (q25 = quantile(DV,0.025),mean = median(DV),q75 = quantile(DV,0.975),obs =mean(OBS),dose=mean(MEAN_DOSE))
+## plotting
+## line
+ggplot(obs) +
+geom_point(aes(y=OBS, x=TIME,color='OBS'))  +
+ggtitle('  Simulation') +
+geom_line(data=sim,aes(y=q25,x=TIME,color="IPRED"),linetype="dashed",size=0.5)+
+geom_line(data=sim,aes(y=mean,x=TIME,color="IPRED"),size =0.8)+
+geom_line(data=sim,aes(y=q75,x=TIME,color="IPRED"),linetype="dashed",size =0.5)+
+#facet_wrap(~ID,ncol=4,)+
+fit_color +   geom_segment(data=dosing,mapping=aes(x=TIME, y=0, xend=TIME, yend=0.04),
+color="orange",arrow = arrow(length = unit(0.1,"cm")))  +
+scale_x_continuous(breaks= pretty_breaks())
+Osim <- filter(Osim,ID==101)
+path <- 'M:\\NMrun\\last.csv'
+readLines(path,n=1)
+Osim <- na.omit(as.data.frame(sapply(read_csv(path,skip=2), as.numeric)))
+Osim <- filter(Osim,ID==101)
+#Osim <- filter(Osim,ID!=112)
+obs <- Osim %>% filter(EVID==0,CMT==5) %>%  filter(OBS>0) %>%
+select(one_of(c('ID','TIME','OBS','CMT'))) %>% distinct
+dosing  <-  Osim %>%  select(one_of(c('ID','TIME','CMT','EVID')))%>%
+filter(EVID==1)   %>% distinct
+sim  <-  Osim %>% filter(EVID==0,CMT==5)  %>%
+group_by(ID,TIME)  %>% summarise  (q25 = quantile(DV,0.025),mean = median(DV),q75 = quantile(DV,0.975),obs =mean(OBS),dose=mean(MEAN_DOSE))
+## plotting
+## line
+ggplot(obs) +
+geom_point(aes(y=OBS, x=TIME,color='OBS'))  +
+ggtitle('  Simulation') +
+geom_line(data=sim,aes(y=q25,x=TIME,color="IPRED"),linetype="dashed",size=0.5)+
+geom_line(data=sim,aes(y=mean,x=TIME,color="IPRED"),size =0.8)+
+geom_line(data=sim,aes(y=q75,x=TIME,color="IPRED"),linetype="dashed",size =0.5)+
+#facet_wrap(~ID,ncol=4,)+
+fit_color +   geom_segment(data=dosing,mapping=aes(x=TIME, y=0, xend=TIME, yend=0.04),
+color="orange",arrow = arrow(length = unit(0.1,"cm")))  +
+scale_x_continuous(breaks= pretty_breaks())
+path <- 'M:\\NMrun\\last.csv'
+readLines(path,n=1)
+path <- 'M:\\NMrun\\last.csv'
+readLines(path,n=1)
+Osim <- na.omit(as.data.frame(sapply(read_csv(path,skip=2), as.numeric)))
+Osim <- filter(Osim,ID==101)
+#Osim <- filter(Osim,ID!=112)
+obs <- Osim %>% filter(EVID==0,CMT==5) %>%  filter(OBS>0) %>%
+select(one_of(c('ID','TIME','OBS','CMT'))) %>% distinct
+dosing  <-  Osim %>%  select(one_of(c('ID','TIME','CMT','EVID')))%>%
+filter(EVID==1)   %>% distinct
+sim  <-  Osim %>% filter(EVID==0,CMT==5)  %>%
+group_by(ID,TIME)  %>% summarise  (q25 = quantile(DV,0.025),mean = median(DV),q75 = quantile(DV,0.975),obs =mean(OBS),dose=mean(MEAN_DOSE))
+## plotting
+## line
+ggplot(obs) +
+geom_point(aes(y=OBS, x=TIME,color='OBS'))  +
+ggtitle('  Simulation') +
+geom_line(data=sim,aes(y=q25,x=TIME,color="IPRED"),linetype="dashed",size=0.5)+
+geom_line(data=sim,aes(y=mean,x=TIME,color="IPRED"),size =0.8)+
+geom_line(data=sim,aes(y=q75,x=TIME,color="IPRED"),linetype="dashed",size =0.5)+
+#facet_wrap(~ID,ncol=4,)+
+fit_color +   geom_segment(data=dosing,mapping=aes(x=TIME, y=0, xend=TIME, yend=0.04),
+color="orange",arrow = arrow(length = unit(0.1,"cm")))  +
+scale_x_continuous(breaks= pretty_breaks())
+path <- 'M:\\NMrun\\last.csv'
+readLines(path,n=1)
+Osim <- na.omit(as.data.frame(sapply(read_csv(path,skip=2), as.numeric)))
+Osim <- filter(Osim,ID==101)
+#Osim <- filter(Osim,ID!=112)
+obs <- Osim %>% filter(EVID==0,CMT==5) %>%  filter(OBS>0) %>%
+select(one_of(c('ID','TIME','OBS','CMT'))) %>% distinct
+dosing  <-  Osim %>%  select(one_of(c('ID','TIME','CMT','EVID')))%>%
+filter(EVID==1)   %>% distinct
+sim  <-  Osim %>% filter(EVID==0,CMT==5)  %>%
+group_by(ID,TIME)  %>% summarise  (q25 = quantile(DV,0.025),mean = median(DV),q75 = quantile(DV,0.975),obs =mean(OBS),dose=mean(MEAN_DOSE))
+## plotting
+## line
+ggplot(obs) +
+geom_point(aes(y=OBS, x=TIME,color='OBS'))  +
+ggtitle('  Simulation') +
+geom_line(data=sim,aes(y=q25,x=TIME,color="IPRED"),linetype="dashed",size=0.5)+
+geom_line(data=sim,aes(y=mean,x=TIME,color="IPRED"),size =0.8)+
+geom_line(data=sim,aes(y=q75,x=TIME,color="IPRED"),linetype="dashed",size =0.5)+
+#facet_wrap(~ID,ncol=4,)+
+fit_color +   geom_segment(data=dosing,mapping=aes(x=TIME, y=0, xend=TIME, yend=0.04),
+color="orange",arrow = arrow(length = unit(0.1,"cm")))  +
+scale_x_continuous(breaks= pretty_breaks())
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+df_iv_only <- read_csv('df_iv_only.csv', na=".", comment = "#")
+df_iv_only <-  as.data.frame(df_iv_only)
+df_iv_only  <-  filter(df_iv_only,TIME!=-1)
+#write_csv(df_iv_only,'df_iv_only.csv',na='.')
+rsq <- function (x, y) cor(x, y) ^ 2
+# count dosing frequency()
+freq <- count( filter(df_iv_only,EVID==1),ID)
+sampling_freq <- count( filter(df_iv_only,EVID==0),ID)
+## -------------------- 5/22/2017vadd real dosing frequency -----------------@@
+real_dosingNo <- function(tb)  {
+xx <- which(tb$DV>=0 )
+for (i in 1: length(xx) )  {
+beforerows <-  tb[1:(xx[i]-1),]   # before dosing table
+tb$real_dosingNo[xx[i]] <-  nrow(filter(beforerows,EVID==1))
+tb$meandose[xx[i]] <-  mean( filter(beforerows,EVID==1)$dose,na.rm = TRUE  )
+tb$meandoseperkg[xx[i]] <- mean(filter(beforerows,EVID==1)$doseperkg,na.rm=TRUE )
+}
+return(tb)
+}
+df_iv_only$real_dosingNo <- NA
+df_iv_only$meandose <- NA
+df_iv_only$meandoseperkg <- NA
+real_iv_data  <-   df_iv_only %>% group_by(ID) %>%
+do(real_dosingNo(.)) %>%
+filter(EVID==0)
+real_iv_data$LnDV <-  log ( real_iv_data$DV )
+real_iv_data$Lndose <-  log ( real_iv_data$meandose)
+real_iv_data$Lndoseperkg  <-log ( real_iv_data$meandoseperkg  )
+with(real_iv_data,cor(LnDV,Lndose,use="pairwise.complete.obs"))
+real_iv_data <- filter(real_iv_data,is.finite(LnDV))
+cor( real_iv_data$LnDV , real_iv_data$Lndose,use="pairwise.complete.obs")
+cor( real_iv_data$LnDV , real_iv_data$Lndoseperkg,use="pairwise.complete.obs")
+cor_table2 <- real_iv_data %>% group_by(real_dosingNo) %>%
+summarise( cor_dose = round( rsq(meandose,DV),digits = 4),
+cor_doseperkg = round( rsq(meandoseperkg,LnDV),digits = 4))
+cor_table2
+cor_table2
+## plot number of dosing distribution
+ggplot(freq,aes(x=n))+geom_histogram()+
+scale_x_continuous (breaks= seq(0, 23, 1),limits = c(0,23)) +
+xlab('No. of Doses')+
+ylab('No. of Subject')
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()+  slopelegend  +themeA  +
+geom_text (aes (label=mean_dose), size=3,hjust=-0.5,alpha=0.7)+
+geom_smooth( aes(x = Lndose, y = LnDV,color='slope=1 line'),
+method = "lm",
+formula = y ~ 1 + offset(x),
+se = FALSE,
+fullrange = TRUE)     +
+annotate("text", x=5.7, y=0, label="AKRA035")   +
+geom_segment (data=filter(xxx,No._of_dose==22),
+mapping=aes(x=6.05, y=0, xend=Lndose, yend=LnDV),
+arrow= arrow(length = unit(0.2, "cm")))    +
+annotate("text", x=5.2, y=-1,label= paste("R^2:",round(with(xxx, rsq(Lndose,LnDV)) ,4)))+
+xlim(5,8)+ ylim(-5,0)+
+ylab("Ln (Adduct)") +  xlab("Ln (Dose)")
+slopelegend  <-  scale_colour_manual ("",breaks = c("slope=1 line"),values = c("slope=1 line"="red"))
+themeA <- theme(strip.text = element_text(size=13),legend.position=c(0.9,0.1),
+legend.background = element_rect (   fill=NA ))
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()+  slopelegend  +themeA  +
+geom_text (aes (label=mean_dose), size=3,hjust=-0.5,alpha=0.7)+
+geom_smooth( aes(x = Lndose, y = LnDV,color='slope=1 line'),
+method = "lm",
+formula = y ~ 1 + offset(x),
+se = FALSE,
+fullrange = TRUE)     +
+annotate("text", x=5.7, y=0, label="AKRA035")   +
+geom_segment (data=filter(xxx,No._of_dose==22),
+mapping=aes(x=6.05, y=0, xend=Lndose, yend=LnDV),
+arrow= arrow(length = unit(0.2, "cm")))    +
+annotate("text", x=5.2, y=-1,label= paste("R^2:",round(with(xxx, rsq(Lndose,LnDV)) ,4)))+
+xlim(5,8)+ ylim(-5,0)+
+ylab("Ln (Adduct)") +  xlab("Ln (Dose)")
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()+  slopelegend  +themeA  +
+geom_text (aes (label=mean_dose), size=3,hjust=-0.5,alpha=0.7)+
+geom_smooth( aes(x = Lndose, y = LnDV,color='slope=1 line'),
+method = "lm",
+formula = y ~ 1 + offset(x),
+se = FALSE,
+fullrange = TRUE)     +
+annotate("text", x=5.7, y=0, label="AKRA035")   +
+annotate("text", x=5.2, y=-1,label= paste("R^2:",round(with(xxx, rsq(Lndose,LnDV)) ,4)))+
+xlim(5,8)+ ylim(-5,0)+
+ylab("Ln (Adduct)") +  xlab("Ln (Dose)")
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()+  slopelegend  +themeA  +
+geom_text (aes (label=mean_dose), size=3,hjust=-0.5,alpha=0.7)+
+geom_smooth( aes(x = Lndose, y = LnDV,color='slope=1 line'),
+method = "lm",
+formula = y ~ 1 + offset(x),
+se = FALSE,
+fullrange = TRUE)
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose')
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()+
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()  +  slopelegend
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()  +
+geom_text (aes (label=meandose), size=3,hjust=-0.5,alpha=0.7)
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()  +
+geom_text (aes (label=meandose), size=3,hjust=-0.5,alpha=0.7)  +
+geom_smooth( aes(x = Lndose, y = LnDV,color='slope=1 line'),
+method = "lm",
+formula = y ~ 1 + offset(x),
+se = FALSE,
+fullrange = TRUE)
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()  +
+geom_text (aes (label=meandose), size=3,hjust=-0.5,alpha=0.7)  +
+geom_smooth( aes(x = Lndose, y = LnDV,color='slope=1 line'),
+method = "lm",
+formula = y ~ 1 + offset(x),
+se = FALSE,
+fullrange = TRUE)
+ggplot(data=real_iv_data ,aes(x=Lndose,y=LnDV))+
+ggtitle( 'Adduct vs. Dose') +   ##--------------- title
+geom_point()  +
+geom_text (aes (label=meandose), size=3,hjust=-0.5,alpha=0.7)  +
+geom_smooth( aes(x = Lndose, y = LnDV,color='slope=1 line'),
+method = "lm",
+formula = y ~ 1 + offset(x),
+se = FALSE,
+fullrange = TRUE)    +
+annotate("text", x=5.2, y=-1,label= paste("R^2:",round(with(real_iv_data, rsq(Lndose,LnDV)) ,4)))+
+xlim(5,8)+ ylim(-5,0)+
+ylab("Ln (Adduct)") +  xlab("Ln (Dose)")
+## ---------------- Dose/kG -----------------------#####
+ggplot(data=real_iv_data,aes(x=Lndoseperkg,y=LnDV))+
+ggtitle( 'Adduct vs. Dose/kg') +   ##--------------------- title ###
+slopelegend  +themeA  +
+geom_point()+
+geom_text (aes (label=meandose), size=3,hjust=-0.5,alpha=0.7)+
+xlim(0.5,4)+ ylim(-5,0)  +
+geom_smooth( aes(x = Lndoseperkg, y = LnDV,color='slope=1 line'),
+method = "lm",
+formula = y ~ 1 + offset(x),
+se = FALSE,
+fullrange = TRUE)     +
+annotate("text", x=1, y=-1,
+label= paste("R^2:",round(  with(real_iv_data, rsq(Lndoseperkg,LnDV)),2))) +
+ylab("Ln (adduct)") +  xlab("Ln (doseperkg)")
+addinexamples:::findAndReplaceAddin()
+addinexamples:::findAndReplaceAddin()
+addinmanager:::addin_manager()
+aaasibo:::Rprofile_sibo  ()
+aaasibo:::Markdown_new()
+ggplot(mtcars, aes(wt, mpg)) +
+geom_point() + geom_rangeframe() +
+theme_tufte()
+ggplot(mtcars, aes(wt, mpg)) +
+geom_point() +
+theme_tufte()
+obs <- read_table_nm("sdtab")   # an output table with at least ID, TIME, DV
+sim <- read_table_nm("st3.txt")
+sim<- sim[,c(1:4)]
+preobs <- sim
+preobs$DV <- NULL
+names(preobs)[3] <- 'DV'
+obs<- preobs
+vpc (sim = sim, obs = obs)
+vpc(sim, obs,
+vpc_theme = new_vpc_theme (list(
+sim_pi_fill = "#aa6666", sim_pi_alpha = 0.15,
+sim_median_fill = "#66aa66", sim_median_alpha = 0.3,
+obs_ci_color = "blue", obs_ci_linetype = 'solid',
+bin_separators_color = NA)),
+ggplot_theme = theme_empty
+)
+library(dplyr)
+## Load the theophylline PK dataset
+obs <- Theoph
+colnames(obs) <- c("id", "wt", "dose", "time", "dv")
+obs <- obs %>%
+group_by(id) %>%
+mutate(sex = round(runif(1))) # randomly assign a "sex" covariate
+sim <- sim_data(obs, # the design of the dataset
+model = function(x) { # the model
+pk_oral_1cmt (t = x$time, dose=x$dose * x$wt, ka = x$ka, ke = x$ke, cl = x$cl * x$wt)
+},
+error = list(additive = 0.1),
+theta = c(2.774, 0.0718, .0361),                 # parameter values
+omega_mat = c(0.08854,                           # specified as lower triangle by default;
+0.02421, 0.02241,                  # note: assumed that every theta has iiv, set to 0 if no iiv.
+0.008069, 0.008639, 0.02862),
+par_names = c("ka", "ke", "cl"),                 # link the parameters in the model to the thetas/omegas
+n = 500)
+vpc (sim = sim, obs = obs)
+vpc ( sim = filter(sim,time<1), obs = filter(obs,time<1))
+library(dplyr)
+library(vpc)
+## Load the theophylline PK dataset
+obs <- Theoph
+colnames(obs) <- c("id", "wt", "dose", "time", "dv")
+obs <- obs %>%
+group_by(id) %>%
+mutate(sex = round(runif(1))) # randomly assign a "sex" covariate
+sim <- sim_data(obs, # the design of the dataset
+model = function(x) { # the model
+pk_oral_1cmt (t = x$time, dose=x$dose * x$wt, ka = x$ka, ke = x$ke, cl = x$cl * x$wt)
+},
+error = list(additive = 0.1),
+theta = c(2.774, 0.0718, .0361),                 # parameter values
+omega_mat = c(0.08854,                           # specified as lower triangle by default;
+0.02421, 0.02241,                  # note: assumed that every theta has iiv, set to 0 if no iiv.
+0.008069, 0.008639, 0.02862),
+par_names = c("ka", "ke", "cl"),                 # link the parameters in the model to the thetas/omegas
+n = 500)
+vpc (sim = sim, obs = obs)
+vpc ( sim = filter(sim,time<1), obs = filter(obs,time<1))
+vpc (sim = sim, obs = obs,pred_corr=TRUE)
+vpc (sim = sim, obs = obs)
+vpc (sim = sim, obs = obs,pred_corr=TRUE)
+grid.arrange(arrangeGrob(p1, p2, ncol=2))
+p1 <- vpc (sim = sim, obs = obs)
+p2 <- vpc (sim = sim, obs = obs,pred_corr=TRUE)
+grid.arrange(arrangeGrob(p1, p2, ncol=2))
+p1 <- vpc (sim = sim, obs = obs)
+p2 <- vpc (sim = sim, obs = obs,pred_corr=TRUE)
+grid.arrange(arrangeGrob(p1, p2, ncol=1))
+obs
+## Load the theophylline PK dataset
+obs <- Theoph
+colnames(obs) <- c("id", "wt", "dose", "time", "dv")
+obs <- obs %>%
+group_by(id) %>%
+mutate(sex = round(runif(1))) # randomly assign a "sex" covariate
+sim <- sim_data(obs, # the design of the dataset
+model = function(x) { # the model
+pk_oral_1cmt (t = x$time, dose=x$dose * x$wt, ka = x$ka, ke = x$ke, cl = x$cl * x$wt)
+},
+error = list(additive = 0.1),
+theta = c(2.774, 0.0718, .0361),                 # parameter values
+omega_mat = c(0.08854,                 # specified as lower triangle by default;
+0.02421, 0.02241,                  # note: assumed that every theta has iiv, set to 0 if no iiv.
+0.008069, 0.008639, 0.02862),
+par_names = c("ka", "ke", "cl"),                 # link the parameters in the model to the thetas/omegas
+n = 500)
+View(obs)
+View(sim)
+aaasibo:::Markdown_new()
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+sim0 <- na.omit(as.data.frame(sapply(read_table('PKPD500.prn',skip=1), as.numeric)))
+obs0 <- na.omit(as.data.frame(sapply(read_csv('Addult-PK-PD-C.csv'), as.numeric)))
+obs1 <- obs0[obs0$CMT==4,c(1:3)]
+sim1 <- sim0[sim0$CMT==4,c(1:3)]
+obs <- obs1
+sim <- sim1
+Time <- unique(sim$TIME)
+vpc(sim, obs,show=list(obs_dv = T,
+obs_ci = F,
+obs_median =F,
+sim_median=TRUE,
+pi=TRUE),
+vpc_theme = new_vpc_theme (list(
+sim_pi_fill = "blue", sim_pi_alpha = 0.15,
+sim_median_fill = "blue", sim_median_alpha = 0.3,
+obs_ci_color = "blue", sim_pi_linetype = 'solid',
+sim_median_linetype = 'solid',
+obs_color='red',obs_size=2,
+bin_separators_color = NA)),
+bins= Time)
+library(vpc)
+library(ggplot2)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+sim0 <- na.omit(as.data.frame(sapply(read_table('PKPD500.prn',skip=1), as.numeric)))
+obs0 <- na.omit(as.data.frame(sapply(read_csv('Addult-PK-PD-C.csv'), as.numeric)))
+obs1 <- obs0[obs0$CMT==4,c(1:3)]
+sim1 <- sim0[sim0$CMT==4,c(1:3)]
+obs <- obs1
+sim <- sim1
+Time <- unique(sim$TIME)
+vpc(sim, obs,)
+vpc(sim, obs)
+vpc(sim, obs,pred_corr=TRUE)
+vpc(sim, obs,pred_corr=TRUE)
+sim
+View(sim1)
+View(sim0)
+View(sim1)
+View(sim0)
+sim1 <- sim0 %>% filter(CMT==4)
+sim1 <- sim0 %>% filter(CMT==4) %>% select(one_of(c('ID','TIME','DV','PRED')))
+View(sim1)
+obs <- obs1
+sim <- sim1
+vpc(sim, obs,pred_corr=TRUE)
+vpc(sim, obs)
+vpc(sim, obs,show=list(obs_dv = T,
+obs_ci = F,
+obs_median =F,
+sim_median=TRUE,
+pi=TRUE),
+vpc_theme = new_vpc_theme (list(
+sim_pi_fill = "blue", sim_pi_alpha = 0.15,
+sim_median_fill = "blue", sim_median_alpha = 0.3,
+obs_ci_color = "blue", sim_pi_linetype = 'solid',
+sim_median_linetype = 'solid',
+obs_color='red',obs_size=2,
+bin_separators_color = NA))
+)
+p1 <-  vpc(sim, obs)
+p2 <-  vpc(sim, obs,show=list(obs_dv = T,
+obs_ci = F,
+obs_median =F,
+sim_median=TRUE,
+pi=TRUE),
+p3 <-      vpc_theme = new_vpc_theme (list(
+sim_pi_fill = "blue", sim_pi_alpha = 0.15,
+sim_median_fill = "blue", sim_median_alpha = 0.3,
+obs_ci_color = "blue", sim_pi_linetype = 'solid',
+sim_median_linetype = 'solid',
+obs_color='red',obs_size=2,
+bin_separators_color = NA))    )
+p1 <-  vpc(sim, obs)
+p2 <-  vpc(sim, obs,show=list(obs_dv = T,
+obs_ci = F,
+obs_median =F,
+sim_median=TRUE,
+pi=TRUE),
+vpc_theme = new_vpc_theme (list(
+sim_pi_fill = "blue", sim_pi_alpha = 0.15,
+sim_median_fill = "blue", sim_median_alpha = 0.3,
+obs_ci_color = "blue", sim_pi_linetype = 'solid',
+sim_median_linetype = 'solid',
+obs_color='red',obs_size=2,
+bin_separators_color = NA))    )
+p3 <- vpc(sim, obs,pred_corr=TRUE)
+grid.arrange(arrangeGrob(p1, p2,p3, ncol=1))
+p1 <-  vpc(sim, obs,title='normal')
+p2 <-  vpc(sim, obs,show=list(obs_dv = T,
+obs_ci = F,
+obs_median =F,
+sim_median=TRUE,
+pi=TRUE),
+vpc_theme = new_vpc_theme (list(
+sim_pi_fill = "blue", sim_pi_alpha = 0.15,
+sim_median_fill = "blue", sim_median_alpha = 0.3,
+obs_ci_color = "blue", sim_pi_linetype = 'solid',
+sim_median_linetype = 'solid',
+obs_color='red',obs_size=2,
+bin_separators_color = NA))    )
+grid.arrange(arrangeGrob(p1, p2,p3, ncol=1))
+p1 <-  vpc(sim, obs,title='normal')
+p2 <-  vpc(sim, obs,show=list(obs_dv = T,
+obs_ci = F,
+obs_median =F,
+sim_median=TRUE,
+pi=TRUE),
+vpc_theme = new_vpc_theme (list(
+sim_pi_fill = "blue", sim_pi_alpha = 0.15,
+sim_median_fill = "blue", sim_median_alpha = 0.3,
+obs_ci_color = "blue", sim_pi_linetype = 'solid',
+sim_median_linetype = 'solid',
+obs_color='red',obs_size=2,
+bin_separators_color = NA))    )
+p3 <- vpc(sim, obs,pred_corr=TRUE,title='predcorr')
+grid.arrange(arrangeGrob(p1, p2,p3, ncol=1))
+aaasibo:::Markdown_new()
+library(vpc)
+library(ggplot2)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+sim0 <- na.omit(as.data.frame(sapply(read_table('PKPD500.prn',skip=1), as.numeric)))
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+dirname(rstudioapi::getActiveDocumentContext()$path)
+library(vpc)
+library(ggplot2)
+setwd("E:/3 QSP_Population/0 Population PK Nonmen/a Model__evla/0_VPC_Sibo/Ron-Keizer VPC/good_case")
+sim0 <- na.omit(as.data.frame(sapply(read_table('PKPD500.prn',skip=1), as.numeric)))
+obs0 <- na.omit(as.data.frame(sapply(read_csv('Addult-PK-PD-C.csv'), as.numeric)))
+obs1 <- obs0[obs0$CMT==4,c(1:3)]
+sim1 <- sim0 %>% filter(CMT==4) %>% select(one_of(c('ID','TIME','DV','PRED')))
+obs <- obs1
+sim <- sim1
+Time <- unique(sim$TIME)
+p1 <-  vpc(sim, obs,title='normal')
+p2 <-  vpc(sim, obs,show=list(obs_dv = T,
+obs_ci = F,
+obs_median =F,
+sim_median=TRUE,
+pi=TRUE),
+vpc_theme = new_vpc_theme (list(
+sim_pi_fill = "blue", sim_pi_alpha = 0.15,
+sim_median_fill = "blue", sim_median_alpha = 0.3,
+obs_ci_color = "blue", sim_pi_linetype = 'solid',
+sim_median_linetype = 'solid',
+obs_color='red',obs_size=2,
+bin_separators_color = NA))    )
+p3 <- vpc(sim, obs,pred_corr=TRUE,title='PC_VPC')
+grid.arrange(arrangeGrob(p1, p2,p3, ncol=1))
+aaasibo:::Rprofile_default  ()
+library(aaasibo)
+library(aaasibo)
+library(aaasibo)
